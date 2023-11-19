@@ -71,7 +71,7 @@ export const loginController = async (req, res) => {
     }
     // checking if email is registered or not..
     const user = await userModel.findOne({ email });
-    console.log(user);
+    //console.log(user);
     if (!user) {
       return res.status(404).send({
         success: false,
@@ -110,4 +110,10 @@ export const loginController = async (req, res) => {
       error,
     });
   }
+};
+
+// TEST GET
+
+export const testController = (req, res) => {
+  res.send("Protected route test");
 };
